@@ -39,7 +39,7 @@ $.ajax({
 */
 
 
-<script src="js/jquery.csv-0.71.min.js"></script>
+
 var data = $.csv.toObjects("js/class_test.csv");
 
 var CommentList = React.createClass({
