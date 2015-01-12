@@ -5,11 +5,10 @@ for (var k,v in test) {
 	//Firebase.put(k,v);
 }
 
+*/
 
 import au.com.bytecode.opencsv.CSVReadProc;
 import java.util.Arrays;
-
-
 var data = csv.read("class_test.csv", new CSVReadProc() {
 	public void procRow(int rowIndex, String... values) {
 		System.out.println(rowIndex + ": " + Arrays.asList(values));
@@ -18,10 +17,12 @@ var data = csv.read("class_test.csv", new CSVReadProc() {
 */
 
 // tutorial2.js
+/**
 var data = [
   {author: "Pete Hunt", text: "This is one comment"},
   {author: "Jordan Walke", text: "This is *another* comment"}
 ];
+*/
 
 var CommentList = React.createClass({
   render: function() {
