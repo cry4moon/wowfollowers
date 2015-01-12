@@ -43,9 +43,9 @@ function getCsv(filepath) {
         type: "GET",
         url: filepath,
         dataType: "text",
-        success: function(data) {
-            //alert(data);
-            return (data);
+        success: function(csv_data) {
+            alert($.csv.toObjects(csv_data));
+            return ($.csv.toObjects(csv_data));
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert("Status: " + xhr.status + "     Error: " + thrownError);
@@ -53,7 +53,7 @@ function getCsv(filepath) {
     });
 };
 
-var data = 	$.csv.toObjects(getCsv("js/class_text.txt"));
+var data = getCsv("js/class_text.txt");
  
 var CommentList = React.createClass({
   render: function() {
