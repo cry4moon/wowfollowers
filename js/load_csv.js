@@ -48,12 +48,12 @@ function getCsv(filepath) {
             	csvjson.csv2json(csv_data, {
     			delim: ",",
     			textdelim: "\""
-            	);
+        	});
             return (
             	csvjson.csv2json(csv_data, {
     			delim: ",",
     			textdelim: "\""
-        	);
+        	});
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert("Status: " + xhr.status + "     Error: " + thrownError);
