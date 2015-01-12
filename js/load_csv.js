@@ -52,7 +52,7 @@ function getCsv(filepath) {
     });
 };
 
-var data = 	$.csv.toObjects(getCsv("js/class_test.csv"));
+var data = 	$.csv.toObjects(getCsv("js/class_text.txt"));
  
 var CommentList = React.createClass({
   render: function() {
