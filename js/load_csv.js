@@ -44,8 +44,16 @@ function getCsv(filepath) {
         url: filepath,
         dataType: "text",
         success: function(csv_data) {
-            alert($.csv.toObjects(csv_data));
-            return ($.csv.toObjects(csv_data));
+            alert(
+            	csvjson.csv2json(csv_data, {
+    			delim: ",",
+    			textdelim: "\""
+            	);
+            return (
+            	csvjson.csv2json(csv_data, {
+    			delim: ",",
+    			textdelim: "\""
+        	);
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert("Status: " + xhr.status + "     Error: " + thrownError);
