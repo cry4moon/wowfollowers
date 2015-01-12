@@ -4,9 +4,7 @@ var test = read.fromCSV('class_test.csv')
 for (var k,v in test) {
 	//Firebase.put(k,v);
 }
-
 */
-var data = read.fromCSV('class_test.csv')
 
 /**
 import au.com.bytecode.opencsv.CSVReadProc;
@@ -25,6 +23,17 @@ var data = [
   {author: "Jordan Walke", text: "This is *another* comment"}
 ];
 */
+
+//var data = read.fromCSV('class_test.csv')
+$.ajax({
+        url: "class_test.csv",
+        dataType: 'text',
+        cache: false
+ }).done(function(csvAsString){
+        //csvAsArray=csvAsString.csvToArray({head:true});
+        var data = csvAsString.csvToArray({head:true});
+ });
+
 
 
 var CommentList = React.createClass({
