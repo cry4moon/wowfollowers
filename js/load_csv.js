@@ -38,9 +38,18 @@ $.ajax({
  });
 */
 
+$.ajax({
+        url: "js/class_test.csv",
+        dataType: 'text',
+        cache: false
+ }).done(function(csvAsString){
+        //csvAsArray=csvAsString.csvToArray({head:true});
+		var data = $.csv.toObjects(csvAsString);
+		window.XX = data
+ });
 
 
-var data = $.csv.toObjects("js/class_test.csv");
+
 
 var CommentList = React.createClass({
   render: function() {
