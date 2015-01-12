@@ -38,14 +38,18 @@ $.ajax({
  });
 */
 
-var data = $.ajax({
+var csv_read = $.ajax({
+	 	type: "GET",
         url: "js/class_test.csv",
-        dataType: 'text',
+        dataType: 'text/csv',
         cache: false
- }).done(function(csvAsString){
-		csvobject = $.csv.toObjects(csvAsString);
-		return (csvobject)
+        success: function (result) {
+       		alert(result);
+       		alert("done!" + csvData.getAllResponseHeaders())
  });
+
+var data = 	$.csv.toObjects(csv_read);
+ 
 
 
 var CommentList = React.createClass({
