@@ -8,7 +8,8 @@ var Firebase = require("firebase");
 var ClassRef = new Firebase("https://followers.firebaseio.com/db_class/Deathknight_Blood");
 ClassRef.on("value", function(ClassSnapshot) {
   var key = ClassSnapshot.val();  // key === "fred"
-  console.log(key);
+  document.write(key);
+  //console.log(key);
   //key = ClassSnapshot.child("name/last").name();  // key === "last"
   //test merong
 });
