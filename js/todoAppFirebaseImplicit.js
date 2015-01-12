@@ -1,25 +1,4 @@
-import au.com.bytecode.opencsv.CSVReadProc;
-import java.util.Arrays;
-
 /** React + ReactFire @jsx React.DOM */
-var TodoList3 = React.createClass({
-  csv.read("class_test.csv", new CSVReadProc() {
-      public void procRow(int rowIndex, String... values) {
-          System.out.println(rowIndex + ": " + Arrays.asList(values));
-      }
-  });
-  render: function() {
-    var createItem = function(item, index) {
-      return <li key={ index }>{ item.text }</li>;
-    };
-    return <ul>{ this.props.items.map(createItem) }</ul>;
-  }
-});
-
-
-
-/** React + ReactFire @jsx React.DOM */
-/**
 var TodoList3 = React.createClass({
   render: function() {
     var createItem = function(item, index) {
@@ -28,7 +7,6 @@ var TodoList3 = React.createClass({
     return <ul>{ this.props.items.map(createItem) }</ul>;
   }
 });
-*/
 
 var TodoApp3 = React.createClass({
   mixins: [ReactFireMixin],
