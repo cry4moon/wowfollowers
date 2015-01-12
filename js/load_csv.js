@@ -1,6 +1,6 @@
 
 /**
-var test = read.fromCSV('class_test.csv')
+
 for (var k,v in test) {
 	//Firebase.put(k,v);
 }
@@ -27,15 +27,20 @@ var data = [
 //<script src="js/csvToArray.v2.1.min.js"></script>
 
 //var data = read.fromCSV('class_test.csv')
+/**
 $.ajax({
         url: "js/class_test.csv",
         dataType: 'text',
         cache: false
  }).done(function(csvAsString){
         //csvAsArray=csvAsString.csvToArray({head:true});
-        var data = csvAsString.csvToArray({head:true});
+        csvAsArray = csvAsString.csvToArray({head:true});
  });
+*/
 
+
+<script src="js/jquery.csv-0.71.min.js"></script>
+var data = $.csv.toObjects("js/class_test.csv");
 
 var CommentList = React.createClass({
   render: function() {
