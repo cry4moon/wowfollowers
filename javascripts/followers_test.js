@@ -4,6 +4,11 @@
  ***************************************************/
 <script src="https://cdn.firebase.com/js/client/2.1.0/firebase.js"></script>
 
+var ExampleComponent = React.createClass({
+  mixins: [ReactFireMixin],
+  ...
+});
+
 var Firebase = require("firebase");
 var ClassRef = new Firebase("https://followers.firebaseio.com/db_class/Deathknight_Blood");
 ClassRef.on("value", function(ClassSnapshot) {

@@ -1,4 +1,4 @@
-/** @jsx React.DOM */
+/** React + Firebase @jsx React.DOM */
 var TodoList2 = React.createClass({
   render: function() {
     var createItem = function(item, index) {
