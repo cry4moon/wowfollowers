@@ -25,15 +25,14 @@ var data = [
 */
 
 //var data = read.fromCSV('class_test.csv')
-$.ajax({
+var data = $.ajax({
         url: "js/class_test.csv",
         dataType: 'text',
         cache: false
  }).done(function(csvAsString){
         //csvAsArray=csvAsString.csvToArray({head:true});
-        var data = csvAsString.csvToArray({head:true});
+        csvAsString = csvAsString.csvToArray({head:true});
  });
-
 
 
 var CommentList = React.createClass({
