@@ -62,6 +62,13 @@ function getCsv(filepath) {
 };
 
 var data = getCsv("js/class_text.txt");
+
+var data = [
+  {author: "Pete Hunt", text: "This is one comment"},
+  {author: "Jordan Walke", text: "This is *another* comment"}
+];
+
+alert(data);
  
 var CommentList = React.createClass({
   render: function() {
