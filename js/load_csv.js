@@ -24,7 +24,7 @@ var data = [
 ];
 */
 
-<script src="js/csvToArray.v2.1.min.js"></script>
+//<script src="js/csvToArray.v2.1.min.js"></script>
 
 //var data = read.fromCSV('class_test.csv')
 var data = $.ajax({
