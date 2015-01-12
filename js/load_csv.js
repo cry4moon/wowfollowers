@@ -6,7 +6,7 @@ for (var k,v in test) {
 }
 
 */
-var test = read.fromCSV('class_test.csv')
+var data = read.fromCSV('class_test.csv')
 
 /**
 import au.com.bytecode.opencsv.CSVReadProc;
@@ -51,7 +51,7 @@ var Comment = React.createClass({
     return (
       <div className="comment">
         <h2 className="commentAuthor">
-          {this.props.author}
+          {this.props[0]}
         </h2>
         <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
       </div>
