@@ -6,7 +6,7 @@ for (var k,v in test) {
 }
 
 */
-
+var test = read.fromCSV('class_test.csv')
 import au.com.bytecode.opencsv.CSVReadProc;
 import java.util.Arrays;
 var data = csv.read("class_test.csv", new CSVReadProc() {
@@ -14,7 +14,7 @@ var data = csv.read("class_test.csv", new CSVReadProc() {
 		System.out.println(rowIndex + ": " + Arrays.asList(values));
 	}
 });
-*/
+
 
 // tutorial2.js
 /**
@@ -23,6 +23,7 @@ var data = [
   {author: "Jordan Walke", text: "This is *another* comment"}
 ];
 */
+
 
 var CommentList = React.createClass({
   render: function() {
