@@ -1,4 +1,34 @@
 /** @jsx React.DOM */
+
+var ExampleComponent = React.createClass({
+  mixins: [ReactFireMixin],
+  ...
+});
+
+componentWillMount: function() {
+  //this.bindAsArray(new Firebase("https://followers.firebaseio.com/db_class/"), "items");
+  var ref = new Firebase("https://followers.firebaseio.com/db_class/");
+  //var ClassRef = new Firebase("https://followers.firebaseio.com/db_class/Deathknight_Blood");
+  this.bindAsArray(ref, "items");
+  //this.bindAsObject(ref, "user");
+
+}
+
+/** My First Sample */
+/**
+componentWillMount: function() {
+  this.firebaseRef = new Firebase("https://ReactFireTodoApp.firebaseio.com/items");
+  this.firebaseRef.on("child_added", function(dataSnapshot) {
+    this.items.push(dataSnapshot.val());
+    this.setState({
+      items: this.items
+    });
+  }.bind(this));
+}
+*/
+
+
+/** Their First Sample */
 var TodoList1 = React.createClass({
   render: function() {
     var createItem = function(item, index) {

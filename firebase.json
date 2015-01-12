@@ -1,4 +1,9 @@
 {
-  "firebase": "reactfiretodoapp",
-  "public": "."
+  "firebase": "followers",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
 }
