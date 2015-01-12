@@ -17,19 +17,18 @@ var data = csv.read("class_test.csv", new CSVReadProc() {
 });
 */
 
-// tutorial1.js
-var CommentBox = React.createClass({
+// tutorial1-raw.js
+var CommentBox = React.createClass({displayName: 'CommentBox',
   render: function() {
     return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-      </div>
+      React.createElement('div', {className: "commentBox"},
+        "Hello, world! I am a CommentBox."
+      )
     );
   }
 });
 React.render(
-  <CommentBox />,
+  React.createElement(CommentBox, null),
   document.getElementById('content')
-
 );
 
