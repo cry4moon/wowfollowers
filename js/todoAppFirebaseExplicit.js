@@ -15,7 +15,7 @@ var TodoApp2 = React.createClass({
   },
 
   componentWillMount: function() {
-    this.firebaseRef = new Firebase("https://ReactFireTodoApp.firebaseio.com/items/");
+    this.firebaseRef = new Firebase("https://followers.firebaseio.com/db_class/");
     this.firebaseRef.limitToLast(25).on("child_added", function(dataSnapshot) {
       // Only keep track of 25 items at a time
       if (this.items.length === 25) {
