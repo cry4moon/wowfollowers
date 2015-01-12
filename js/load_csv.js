@@ -38,20 +38,22 @@ $.ajax({
  });
 */
 
-var csv_read = $.ajax({
-	 	type: "GET",
-        url: "js/class_test.csv",
-        dataType: 'text/csv',
-        cache: false
-        success: function (result) {
-       		alert(result);
-       		alert("done!" + csvData.getAllResponseHeaders())
- });
+function getCsv(filepath) {
+    $.ajax({
+        type: "GET",
+        url: filepath,
+        dataType: "text",
+        success: function(data) {
+            alert(data);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert("Status: " + xhr.status + "     Error: " + thrownError);
+        }
+    });
+};
 
-var data = 	$.csv.toObjects(csv_read);
+var data = 	$.csv.toObjects(getCsv("js/class_test.csv"));
  
-
-
 var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function (comment) {
