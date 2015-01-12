@@ -62,14 +62,12 @@ function getCsv(filepath) {
 };
 
 var data = getCsv("js/class_text.txt");
+var messageListRef = new Firebase('https://followers.firebaseio.com/db_test/');
+    messageListRef.push(data);
+// Same effect as the previous example, but we've combined the push() and the set().
 
-var data = [
-  {author: "Pete Hunt", text: "This is one comment"},
-  {author: "Jordan Walke", text: "This is *another* comment"}
-];
 
-alert(data);
- 
+
 var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function (comment) {
