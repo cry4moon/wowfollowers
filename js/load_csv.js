@@ -44,7 +44,8 @@ function getCsv(filepath) {
         url: filepath,
         dataType: "text",
         success: function(data) {
-            alert(data);
+            //alert(data);
+            return (data);
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert("Status: " + xhr.status + "     Error: " + thrownError);
