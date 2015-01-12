@@ -1,4 +1,4 @@
-/** @jsx React.DOM */
+/** React + ReactFire @jsx React.DOM */
 var TodoList3 = React.createClass({
   render: function() {
     var createItem = function(item, index) {
@@ -16,7 +16,7 @@ var TodoApp3 = React.createClass({
   },
 
   componentWillMount: function() {
-    var firebaseRef = new Firebase("https://followers.firebaseio.com/db_class/");
+    var firebaseRef = new Firebase("https://followers.firebaseio.com/db_test/");
     this.bindAsArray(firebaseRef.limitToLast(25), "items");
   },
 
