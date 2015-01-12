@@ -26,7 +26,7 @@ var data = [
 
 //var data = read.fromCSV('class_test.csv')
 $.ajax({
-        url: "class_test.csv",
+        url: "js/class_test.csv",
         dataType: 'text',
         cache: false
  }).done(function(csvAsString){
