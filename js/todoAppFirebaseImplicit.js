@@ -24,7 +24,7 @@ var ClassApp = React.createClass({
   mixins: [ReactFireMixin],
 
   getInitialState: function() {
-    return <ClassTable items={ this.state.items } />;
+    return <items: [], text: "">;
   },
 
   componentWillMount: function() {
