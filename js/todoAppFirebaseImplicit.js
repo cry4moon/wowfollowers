@@ -1,4 +1,9 @@
 /** React + ReactFire @jsx React.DOM */
+
+var table = React.renderComponent(
+  <Table data={this.props.items}/>,
+  ClassTable);
+
 var TodoList3 = React.createClass({
   render: function() {
     var createItem = function(item, index) {
