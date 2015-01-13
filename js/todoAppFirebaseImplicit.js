@@ -9,6 +9,7 @@ var TodoTable = React.createClass({
   }
 });
 
+/**
 var TodoList3 = React.createClass({
   render: function() {
     var createItem = function(item, index) {
@@ -17,6 +18,7 @@ var TodoList3 = React.createClass({
     return <ul>{ this.props.items.map(createItem) }</ul>;
   }
 });
+*/
 
 var TodoApp3 = React.createClass({
   mixins: [ReactFireMixin],
@@ -58,4 +60,4 @@ var TodoApp3 = React.createClass({
   }
 });
 
-React.render(<TodoApp3 />, document.getElementById("todoApp3"));
+React.render(<ClassTable />, document.getElementById("ClassTable"));
