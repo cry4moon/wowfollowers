@@ -1,8 +1,13 @@
 /** React + ReactFire @jsx React.DOM */
 
-var table = React.renderComponent(
-  <Table data={this.props.items}/>,
-  ClassTable);
+var TodoTable = React.createClass({
+  render: function() {
+    var createItem = function(item, index) {
+      return <tr><td>{item.직업}</td><td>{item.전문화}</td></tr>;
+    };
+    return <table>{ this.props.items.map(createItem) }</table>;
+  }
+});
 
 var TodoList3 = React.createClass({
   render: function() {
@@ -42,7 +47,8 @@ var TodoApp3 = React.createClass({
   render: function() {
     return (
       <div>
-        <TodoList3 items={ this.state.items } />
+        //<TodoList3 items={ this.state.items } />
+        <TodoTable items={ this.state.items } />
         <form onSubmit={ this.handleSubmit }>
           <input onChange={ this.onChange } value={ this.state.text } />
           <button>{ "Add #" + (this.state.items.length + 1) }</button>
