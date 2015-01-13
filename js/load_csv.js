@@ -44,11 +44,6 @@ function getCsv(filepath) {
         url: filepath,
         dataType: "text",
         success: function(csv_data) {
-            alert(
-            	csvjson.csv2json(csv_data, {
-    			delim: ",",
-    			textdelim: "\""
-        	}));
             return (
             	csvjson.csv2json(csv_data, {
     			delim: ",",
@@ -62,6 +57,7 @@ function getCsv(filepath) {
 };
 
 var data = getCsv("js/class_text.txt");
+alert(data);
 var messageListRef = new Firebase('https://followers.firebaseio.com/db_test/');
     messageListRef.push(data);
 // Same effect as the previous example, but we've combined the push() and the set().
