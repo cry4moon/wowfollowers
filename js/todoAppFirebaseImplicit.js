@@ -1,6 +1,6 @@
 /** React + ReactFire @jsx React.DOM */
 
-var TodoTable = React.createClass({
+var ClassTable = React.createClass({
   render: function() {
     var createItem = function(item, index) {
       return <tr><td>{item.직업}</td><td>{item.전문화}</td></tr>;
@@ -20,11 +20,11 @@ var TodoList3 = React.createClass({
 });
 */
 
-var ClassTable = React.createClass({
+var ClassApp = React.createClass({
   mixins: [ReactFireMixin],
 
   getInitialState: function() {
-    return {items: [], text: ""};
+    return <ClassTable items={ this.state.items } />;
   },
 
   componentWillMount: function() {
@@ -50,7 +50,7 @@ var ClassTable = React.createClass({
     return (
       <div>
         //<TodoList3 items={ this.state.items } />
-        <TodoTable items={ this.state.items } />
+        <ClassTable items={ this.state.items } />
         <form onSubmit={ this.handleSubmit }>
           <input onChange={ this.onChange } value={ this.state.text } />
           <button>{ "Add #" + (this.state.items.length + 1) }</button>
@@ -60,4 +60,4 @@ var ClassTable = React.createClass({
   }
 });
 
-React.render(<ClassTable />, document.getElementById("class_table"));
+React.render(<ClassApp />, document.getElementById("class_view"));
