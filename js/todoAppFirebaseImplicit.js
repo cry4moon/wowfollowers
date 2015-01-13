@@ -20,7 +20,7 @@ var TodoList3 = React.createClass({
 });
 */
 
-var TodoApp3 = React.createClass({
+var ClassTable = React.createClass({
   mixins: [ReactFireMixin],
 
   getInitialState: function() {
@@ -60,4 +60,4 @@ var TodoApp3 = React.createClass({
   }
 });
 
-React.render(<ClassTable />, document.getElementById("ClassTable"));
+React.render(<ClassTable />, document.getElementById("class_table"));
