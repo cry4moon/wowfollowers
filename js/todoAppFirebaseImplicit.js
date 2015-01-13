@@ -3,7 +3,7 @@
 var ClassTable = React.createClass({
   render: function() {
     var createItem = function(item, index) {
-      return <tr key={item.id}><td>{item.직업}</td><td>{item.전문화}</td></tr>;
+      return <tr key={item.id}><td>{item.id}</td><td>{item.직업}</td><td>{item.전문화}</td></tr>;
     };
     return <table>{ this.props.items.map(createItem) }</table>;
   }
