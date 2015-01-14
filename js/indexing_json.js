@@ -27,7 +27,7 @@ var TransformApp = React.createClass({
   mixins: [ReactFireMixin],
 
   getInitialState: function() {
-    return {table_info};
+    return <TransformTable items={ table_info } />;
   },
 
   componentWillMount: function() {
