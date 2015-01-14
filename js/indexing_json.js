@@ -14,7 +14,6 @@ var table_info = {
   "tb_class": { "from" : "tb_class_upload/"}
 };
 
-var Firebase = require("firebase");
 var ClassRef = new Firebase("https://followers.firebaseio.com/Deathknight_Blood");
 ClassRef.on("value", function(ClassSnapshot) {
   var key = ClassSnapshot.val();  // key === "fred"
