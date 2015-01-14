@@ -54,7 +54,7 @@ var TransformApp = React.createClass({
         <TransformTable items={ table_info } />
         <form onSubmit={ this.handleSubmit }>
           <input onChange={ this.onChange } value={ this.state.text } />
-          <button>{ "Add #" + (this.state.items.length + 1) }</button>
+          <button>{ "Add #" }</button>
         </form>
       </div>
     );
