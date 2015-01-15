@@ -38,18 +38,28 @@ var TransformTable = React.createClass({
 }
 */
 
-
 var TransformTable = React.createClass({
   render: function() {
-    var transform = function(item, index) {
-      return <tr key={ index }><td>{ item.child("key").val() }</td></tr>;
-      };
-    //var FromRef = ;
-    new Firebase(root_info + item.from).orderByChild("order").once('value', function(data_list) {
-    return <table>{ data_list.map(transform) }</table>;
+    var transform  = function (item, index) {
+      var FromRef = new Firebase(root_info + item.from);
+      FromRef.orderByChild("order").once('value', function(data_list) {
+        data_list.forEach(function(data_row) {
+        return <tr key={ index }><td>{ data_row.child("key").val() }</td></tr>;  
+      });
     });
+    return <table>{ data_list.map(transform) }</table>;
   }
 });
+
+
+
+
+// Note ellision, there is no member at 2 so it isn't visited
+obj.table.map(logArrayElements);
+
+
+
+
 
 var root_info = "https://followers.firebaseio.com/";
 
