@@ -53,8 +53,10 @@ var TransformTable = React.createClass({
     var Transform = function() {
       FromRef.orderByChild("order").once('value', function(data_list) {
         var RowProcess = function (item, index) {
+          console.log ( item.key() );
           return <tr key={ index }><td>{ item.key() }</td></tr>;    
         };
+      console.log (data_list.map (rowprocess));
       return data_list.map(RowProcess);
       });
     };
