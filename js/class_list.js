@@ -18,7 +18,7 @@ var ClassApp = React.createClass({
 
   componentWillMount: function() {
     var firebaseRef = new Firebase("https://followers.firebaseio.com/tb_class/");
-    this.bindAsArray(firebaseRef.orderByChilid("order").limitToLast(25), "items");
+    this.bindAsArray(firebaseRef.orderByChild("order").limitToLast(25), "items");
   },
 
   onChange: function(e) {
