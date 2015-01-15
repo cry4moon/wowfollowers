@@ -44,9 +44,10 @@ var TransformTable = React.createClass({
       var FromRef = new Firebase(root_info + item.from);
       FromRef.orderByChild("order").once('value', function(data_list) {
         data_list.forEach(function(data_row) {
-        return <tr key={ index }><td>{ data_row.child("key").val() }</td></tr>;  
+          return <tr key={ index }><td>{ data_row.child("key").val() }</td></tr>;
+        });
       });
-    });
+    }
     return <table>{ data_list.map(transform) }</table>;
   }
 });
