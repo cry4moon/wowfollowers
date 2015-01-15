@@ -56,8 +56,8 @@ var TransformTable = React.createClass({
           <tr key={ data_row.child("order").val() }><td>{ data_row.key() }</td></tr>;
         });
       });
-    } </table>
-  }
+    } </table>;
+  };
 });
 
 
