@@ -47,7 +47,8 @@ var TransformTable = React.createClass({
     //var FromRef = ;
     new Firebase(root_info + item.from).orderByChild("order").once('value', function(data_list) {
     return <table>{ data_list.map(transform) }</table>;
-    }
+    });
+  }
 });
 
 var root_info = "https://followers.firebaseio.com/";
