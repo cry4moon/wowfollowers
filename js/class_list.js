@@ -49,17 +49,12 @@ function trGen(item, index) {
 
 var TransformTable = React.createClass({
   render: function() {
-    var transform  = function () {
-      var FromRef = new Firebase(root_info + "tb_class/");
-      FromRef.orderByChild("order").once('value', function(data_list) {
-        data_list.map(function(item, index) {
-          console.log(item.key());
-          console.log("R1");
-          return <tr key={ index }><td>{ item.key() }</td></tr>;
-        });
-      });
-    }
-    return <table>{ transform }</table>;
+    var FromRef = new Firebase(root_info + "tb_class/");
+    var ClassList = FromRef.orderByChild("order").once('value', function(data_list));
+    var transform  = function (item, index) {
+        return <tr key={ index }><td>{ item.key() }</td></tr>;
+      };
+    return <table>{ ClassList.map(transform) }</table>;
   }
 });
 
