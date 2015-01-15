@@ -53,6 +53,7 @@ var TransformTable = React.createClass({
       var FromRef = new Firebase(root_info + "tb_class/");
       FromRef.orderByChild("order").once('value', function(data_list) {
         data_list.forEach(function(data_row) {
+          console.log(data_row.child("key").val());
           return <tr key={ index }><td>{ data_row.child("key").val() }</td></tr>;
         });
       });
@@ -65,7 +66,7 @@ var TransformTable = React.createClass({
 
 
 // Note ellision, there is no member at 2 so it isn't visited
-obj.table.map(logArrayElements);
+//obj.table.map(logArrayElements);
 
 
 
