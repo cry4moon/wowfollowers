@@ -59,11 +59,8 @@ var TransformTable = React.createClass({
       });
     };
     return <table> { Transform } </table>;
-  };
+  }
 });
-
-
-
 
 // Note ellision, there is no member at 2 so it isn't visited
 //obj.table.map(logArrayElements);
