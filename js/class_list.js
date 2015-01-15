@@ -22,8 +22,7 @@ function logArrayElements(item, index) {
 var TransformTable = React.createClass({
   render: function() {
     var FromRef = new Firebase(root_info + item.from);
-    var DataSet = FromRef.orderByChild("order").once('value');
-    , function(data_list) {
+    var DataSet = FromRef.orderByChild("order").once('value', function(data_list) {
       data_list.forEach(function(data_row) {
       console.log(data_row.child("key").val());
     var transform = function(item, index) {
@@ -42,12 +41,12 @@ var TransformTable = React.createClass({
 
 var TransformTable = React.createClass({
   render: function() {
-    //var FromRef = ;
-    var DataSet = new Firebase(root_info + item.from).orderByChild("order").once('value');
     var transform = function(item, index) {
       return <tr key={ index }><td>{ item.child("key").val() }</td></tr>;
       };
-    return <table>{ DataSet.map(transform) }</table>;
+    //var FromRef = ;
+    new Firebase(root_info + item.from).orderByChild("order").once('value', function(data_list) {
+    return <table>{ data_list.map(transform) }</table>;
     }
 });
 
