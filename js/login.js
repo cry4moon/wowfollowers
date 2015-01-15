@@ -9,6 +9,7 @@ function getUserInfo () {
 		var user_ref = new Firebase(root_info + "db_user/" + authData.uid);
 		user_ref.child("locale").set("kor");
 		user_ref.child("profile").set("profile_text");
+		console.log (user_ref);
 	}
 	return user_ref;
 }
@@ -16,7 +17,6 @@ function getUserInfo () {
 if (authData) {
 	console.log("User " + authData.uid + " is logged in with " + authData.provider);
 	console.log("Authenticated successfully with payload:", authData);
-	var userData = getUserInfo;
 	} else {
 	ref.authWithOAuthRedirect("google", function(error, authData) {
 	  if (error) {
@@ -27,6 +27,7 @@ if (authData) {
 	});
 }
 
+var userData = getUserInfo();
 
 
 
