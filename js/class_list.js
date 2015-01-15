@@ -56,7 +56,7 @@ var TransformTable = React.createClass({
           console.log ( item.key() );
           return <tr key={ index }><td>{ item.key() }</td></tr>;    
         };
-      console.log (data_list.map (rowprocess));
+      console.log (data_list.map(RowProcess));
       return data_list.map(RowProcess);
       });
     };
