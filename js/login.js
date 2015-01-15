@@ -3,6 +3,12 @@ var ref = new Firebase(root_info);
 var authData = ref.getAuth();
 
 function getUserInfo () {
+	var user_ref = new Firebase (root_info + "db_user/" + authData.uid);
+	user_ref.on('value', function(dataSnapshot) {
+		console.log (dataSnapshot);
+  		// code to handle new value.
+	});
+
 	if (ref.child("db_user/" + authData.uid).exists() == false) {
 		var user_ref = new Firebase(root_info + "db_user/" + authData.uid);
 		user_ref.child("locale").set("kor");
