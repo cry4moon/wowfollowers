@@ -50,13 +50,15 @@ function trGen(item, index) {
 var TransformTable = React.createClass({
   render: function() {
     var FromRef = new Firebase(root_info + "tb_class/");
-    return <table> {
+    var Transform = function() {
       FromRef.orderByChild("order").once('value', function(data_list) {
-        data_list.forEach(function(data_row) {
-          <tr key={ data_row.child("order").val() }><td>{ data_row.key() }</td></tr>;
-        });
+        var RowProcess = function (item, index) {
+          return <tr key={ index }><td>{ item.key() }</td></tr>;    
+        };
+      return data_list.map(RowProcess);
       });
-    } </table>;
+    };
+    return <table> { Transform } </table>;
   };
 });
 
